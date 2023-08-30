@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+  "apiVersion": 3,
+  "name": "events-plugin/date-filter",
+  "version": "0.1.0",
+  "title": "Date filter",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Example block scaffolded with Create Block tool.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "usesContext": [
+    "queryId",
+    "query",
+    "queryContext",
+    "displayLayout",
+    "templateSlug",
+    "previewPostType",
+    "enhancedPagination"
+  ],
+  "textdomain": "events",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "parent": [
+    "core/query"
+  ]
+}

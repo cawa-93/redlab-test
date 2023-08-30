@@ -1,0 +1,1 @@
+{"version":3,"file":"loop/view.js","mappings":";;;;;AAAA;AACAA,OAAO,CAACC,GAAG,CAAE,+CAAgD,CAAC;AAC9D,8B","sources":["webpack://events/./src/loop/view.js"],"sourcesContent":["/* eslint-disable no-console */\nconsole.log( 'Hello World! (from create-block-events block)' );\n/* eslint-enable no-console */\n"],"names":["console","log"],"sourceRoot":""}
