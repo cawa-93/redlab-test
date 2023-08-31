@@ -1,9 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
   "apiVersion": 3,
-  "name": "events-plugin/date-filter",
+  "name": "events-plugin/location-filter",
   "version": "0.1.0",
-  "title": "Date filter",
+  "title": "Location filter",
   "category": "widgets",
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",

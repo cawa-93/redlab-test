@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/date-filter/edit.js":
-/*!*********************************!*\
-  !*** ./src/date-filter/edit.js ***!
-  \*********************************/
+/***/ "./src/location-filter/edit.js":
+/*!*************************************!*\
+  !*** ./src/location-filter/edit.js ***!
+  \*************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -26,7 +26,7 @@ function edit() {
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...props
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_2___default()), {
-    block: "events-plugin/date-filter",
+    block: "events-plugin/location-filter",
     attributes: props.attributes
   }));
 }
@@ -73,13 +73,13 @@ module.exports = window["wp"]["serverSideRender"];
 
 /***/ }),
 
-/***/ "./src/date-filter/block.json":
-/*!************************************!*\
-  !*** ./src/date-filter/block.json ***!
-  \************************************/
+/***/ "./src/location-filter/block.json":
+/*!****************************************!*\
+  !*** ./src/location-filter/block.json ***!
+  \****************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json","apiVersion":3,"name":"events-plugin/date-filter","version":"0.1.0","title":"Date filter","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"usesContext":["queryId","query","queryContext","displayLayout","templateSlug","previewPostType","enhancedPagination"],"textdomain":"events","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","parent":["core/query"],"render":"file:./render.php"}');
+module.exports = JSON.parse('{"$schema":"https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json","apiVersion":3,"name":"events-plugin/location-filter","version":"0.1.0","title":"Location filter","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"usesContext":["queryId","query","queryContext","displayLayout","templateSlug","previewPostType","enhancedPagination"],"textdomain":"events","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","parent":["core/query"],"render":"file:./render.php"}');
 
 /***/ })
 
@@ -154,14 +154,14 @@ module.exports = JSON.parse('{"$schema":"https://raw.githubusercontent.com/WordP
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/*!**********************************!*\
-  !*** ./src/date-filter/index.js ***!
-  \**********************************/
+/*!**************************************!*\
+  !*** ./src/location-filter/index.js ***!
+  \**************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/date-filter/edit.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/date-filter/block.json");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/location-filter/edit.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/location-filter/block.json");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *

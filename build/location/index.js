@@ -83,9 +83,9 @@ module.exports = window["wp"]["blocks"];
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/*!***************************!*\
-  !*** ./src/loop/index.js ***!
-  \***************************/
+/*!*******************************!*\
+  !*** ./src/location/index.js ***!
+  \*******************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
@@ -95,36 +95,23 @@ __webpack_require__.r(__webpack_exports__);
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 
-const MY_VARIATION_NAME = 'events-plugin/events-loop';
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockVariation)('core/query', {
+const MY_VARIATION_NAME = 'events-plugin/location';
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockVariation)('core/post-terms', {
   name: MY_VARIATION_NAME,
-  title: 'Events Loop',
-  description: 'Displays a list of events',
-  isActive: ({
-    namespace,
-    query
-  }) => {
-    return namespace === MY_VARIATION_NAME && query.postType === 'event';
-  },
+  title: 'Location',
+  description: 'Display event location',
+  // isActive: ({namespace, query}) => {
+  // 	return (
+  // 		namespace === MY_VARIATION_NAME
+  // 		&& query.postType === 'event'
+  // 	);
+  // },
   attributes: {
     namespace: MY_VARIATION_NAME,
-    query: {
-      perPage: 6,
-      pages: 0,
-      offset: 0,
-      postType: 'event',
-      order: 'desc',
-      orderBy: 'date',
-      author: '',
-      search: '',
-      exclude: [],
-      sticky: '',
-      inherit: false
-    }
+    term: 'location'
   },
-  allowedControls: ['order'],
-  scope: ['inserter'],
-  innerBlocks: [['core/post-template', {}, [['core/post-title'], ['core/post-excerpt']]], ['core/query-pagination']]
+  allowedControls: [],
+  scope: ['inserter']
 });
 
 //

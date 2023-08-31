@@ -44,7 +44,6 @@ registerBlockVariation('core/query', {
 			[ [ 'core/post-title' ], [ 'core/post-excerpt' ] ],
 		],
 		[ 'core/query-pagination' ],
-		[ 'core/query-no-results' ],
 	],
 	}
 );

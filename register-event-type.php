@@ -3,9 +3,48 @@
 namespace Events_Plugin;
 
 
-function register_location_taxonomy() {
+function register_location_taxonomy(): void {
 
+	$labels = array(
+		'name'                  => __( 'Locations', 'events' ),
+		'singular_name'         => __( 'Location', 'events' ),
+		'menu_name'             => __( 'Locations', 'events' ),
+		'name_admin_bar'        => __( 'Location', 'events' ),
+		'add_new'               => __( 'Add New', 'events' ),
+		'add_new_item'          => __( 'Add New Location', 'events' ),
+		'new_item'              => __( 'New Location', 'events' ),
+		'edit_item'             => __( 'Edit Location', 'events' ),
+		'view_item'             => __( 'View Location', 'events' ),
+		'all_items'             => __( 'All Locations', 'events' ),
+		'search_items'          => __( 'Search Locations', 'events' ),
+		'parent_item_colon'     => __( 'Parent Locations:', 'events' ),
+		'not_found'             => __( 'No Locations found.', 'events' ),
+		'not_found_in_trash'    => __( 'No Locations found in Trash.', 'events' ),
+		'featured_image'        => __( 'Location Cover Image', 'events' ),
+		'set_featured_image'    => __( 'Set cover image', 'events' ),
+		'remove_featured_image' => __( 'Remove cover image', 'events' ),
+		'use_featured_image'    => __( 'Use as cover image', 'events' ),
+		'archives'              => __( 'Location archives', 'events' ),
+		'insert_into_item'      => __( /** @lang text */ 'Insert into Location', 'events' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Location', 'events' ),
+		'filter_items_list'     => __( 'Filter Locations list', 'events' ),
+		'items_list_navigation' => __( 'Locations list navigation', 'events' ),
+		'items_list'            => __( 'Locations list', 'events' ),
+	);
+
+
+	register_taxonomy( 'location', 'event', [
+		'labels'       => $labels,
+		'public'       => true,
+		'show_in_rest'       => true,
+		'default_term' => [
+			'name' => 'Remote',
+			'slug' => 'remote',
+		]
+	] );
 }
+
+add_action( 'init', 'Events_Plugin\register_location_taxonomy', 9 );
 
 function register_events_post_type(): void {
 
@@ -44,13 +83,13 @@ function register_events_post_type(): void {
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'event' ),
 		'capability_type'    => 'post',
 		'has_archive'        => false,
 		'hierarchical'       => false,
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'editor' ),
 		'show_in_rest'       => true,
+		'taxonomies'         => [ 'location' ]
 	] );
 }
 

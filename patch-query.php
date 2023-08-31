@@ -35,3 +35,12 @@ function filter_events_by_date( array $query ): array {
 }
 
 add_action( 'query_loop_block_query_vars', 'Events_Plugin\filter_events_by_date');
+function filter_events_by_location( array $query ): array {
+	if ( ! is_admin() && $query['post_type'] === 'event' && isset( $_GET['location'] ) ) {
+		$query['location'] = $_GET['location'];
+	}
+
+	return $query;
+}
+
+add_action( 'query_loop_block_query_vars', 'Events_Plugin\filter_events_by_location');
