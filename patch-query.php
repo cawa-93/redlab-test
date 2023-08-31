@@ -5,13 +5,13 @@ namespace Events_Plugin;
 
 use WP_Query;
 
-function show_future_events_publicly( WP_Query $query ): void {
-	if ( ! is_admin() && $query->get( 'post_type' ) === 'event' && empty( $query->get( 'post_status' ) ) ) {
-		$query->set( 'post_status', [ 'publish', 'future' ] );
-	}
-}
-
-add_action( 'pre_get_posts', 'Events_Plugin\show_future_events_publicly' );
+//function show_future_events_publicly( WP_Query $query ): void {
+//	if ( ! is_admin() && $query->get( 'post_type' ) === 'event' && empty( $query->get( 'post_status' ) ) ) {
+//		$query->set( 'post_status', [ 'publish', 'future' ] );
+//	}
+//}
+//
+//add_action( 'pre_get_posts', 'Events_Plugin\show_future_events_publicly' );
 
 
 function filter_events_by_date( array $query ): array {

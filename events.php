@@ -21,4 +21,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once dirname( __FILE__ ) . '/register-event-type.php';
 require_once dirname( __FILE__ ) . '/register-blocks.php';
 require_once dirname( __FILE__ ) . '/patch-query.php';
-

@@ -1,3 +1,6 @@
+import {createFilter} from "../shared/view-handle-filter";
+
+
 document.addEventListener('DOMContentLoaded', () => {
 	document.body.querySelectorAll('.wp-block-events-plugin-location-filter').forEach(blockElement => {
 		const queryContainer = blockElement.closest('.wp-block-query')
@@ -18,11 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
  * @param {HTMLElement} queryContainer
  */
 function init(blockElement, queryContainer) {
-	blockElement.addEventListener('change', () => {
+	const reloadFeed = createFilter(queryContainer)
+	blockElement.addEventListener('change', async () => {
 		updateURL();
+		reloadFeed();
 	})
 
-	function updateURL() {
+
+	async function updateURL() {
 		const url = new URL(location.href);
 		const data = blockElement.value
 		if (data.trim()) {
@@ -31,6 +37,6 @@ function init(blockElement, queryContainer) {
 			url.searchParams.delete('location')
 		}
 
-		location.href = url.toString()
+		history.replaceState(data, '', url)
 	}
 }

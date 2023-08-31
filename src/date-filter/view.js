@@ -1,3 +1,5 @@
+import {createFilter} from "../shared/view-handle-filter";
+
 document.addEventListener('DOMContentLoaded', () => {
 	document.body.querySelectorAll('.wp-block-events-plugin-date-filter').forEach(blockElement => {
 		const queryContainer = blockElement.closest('.wp-block-query')
@@ -18,9 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
  * @param {HTMLElement} queryContainer
  */
 function init(blockElement, queryContainer) {
+	const reloadFeed = createFilter(queryContainer);
 	blockElement.querySelectorAll('input').forEach(el => {
-		el.addEventListener('change', () => {
+		el.addEventListener('change', async () => {
 			updateURL();
+			await reloadFeed();
 		})
 	})
 
@@ -56,8 +60,6 @@ function init(blockElement, queryContainer) {
 			url.searchParams.delete('date_query')
 		}
 
-		location.href = url
+		history.replaceState(data, '', url)
 	}
-
-	console.log({blockElement, queryContainer})
 }

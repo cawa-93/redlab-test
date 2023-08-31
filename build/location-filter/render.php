@@ -12,15 +12,15 @@ $locations = get_terms( [
 ?>
 <select aria-label="<?= __( 'Filter events by location', 'events' ) ?>" <?php echo get_block_wrapper_attributes(); ?>>
 	<option
-		disabled
 		value=""
 		<?php selected( '', isset( $_GET['location'] ) ? $_GET['location'] : '' ) ?>
 	>
-		<?= __( 'Filter events by location', 'events' ) ?>
+		<?= __( 'Any', 'events' ) ?>
 	</option>
 
 	<?php foreach ( $locations as $location ) : ?>
 		<option
+			data-term-id="<?= $location->term_id ?>"
 			value="<?= $location->slug ?>"
 			<?php selected( $location->slug, isset( $_GET['location'] ) ? $_GET['location'] : '' ) ?>
 		>
