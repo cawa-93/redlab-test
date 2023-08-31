@@ -22,13 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function init(blockElement, queryContainer) {
 	const reloadFeed = createFilter(queryContainer)
+	
 	blockElement.addEventListener('change', async () => {
 		updateURL();
-		reloadFeed();
+		await reloadFeed();
 	})
 
 
-	async function updateURL() {
+	function updateURL() {
 		const url = new URL(location.href);
 		const data = blockElement.value
 		if (data.trim()) {

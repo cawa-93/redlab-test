@@ -38,6 +38,8 @@ registerBlockVariation('core/query', {
 		scope: ['inserter'],
 
 	innerBlocks: [
+		[ 'events-plugin/date-filter' ],
+		[ 'events-plugin/location-filter' ],
 		[
 			'core/post-template',
 			{},
