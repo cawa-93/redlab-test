@@ -16,3 +16,13 @@ https://djinni.co/jobs/578622-wordpress-developer/
 1. Розгорніть WordPress.
 2. Встановіть плагін з цього репозиторію.
 3. Імпортуйте контент з файлу [./content.xml](./content.xml).
+
+
+## Початок розробки
+
+Для внесення змін в плагін потрібно налаштувати робоче середовище.
+
+1. Встановити node.js.
+2. В теці з плагіном виконати `npm ci`, щоб встановити залежності.
+3. В теці з плагіном виконати `npm start`, щоб запустити середовище розробки.
+Детальніше [@wordpress/create-block ](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/#available-commands-in-the-scaffolded-project)
